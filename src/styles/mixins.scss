@@ -1,0 +1,26 @@
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin list-style-none {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin button {
+  font-family: $medium-font;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: default;
+  }
+}

@@ -1,0 +1,158 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.header {
+  background-color: $background-white;
+  min-height: 91px;
+  padding-top: 25px;
+  padding-bottom: 23px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 22px;
+    padding-bottom: 12px;
+    min-height: 69px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    min-height: 48px;
+  }
+}
+
+.wrapper {
+  @include container;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 45px;
+  max-width: 1260px;
+
+  @media (max-width: $mobile-width) {
+    padding: 0 15px;
+  }
+}
+
+.burger {
+  display: none;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  border: 0;
+  background: 0 0;
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 16px;
+    height: 1px;
+    background-color: $basic-black;
+    box-shadow: 0 5px 0 $basic-black,0 -5px 0 $basic-black;
+  }
+}
+
+.logo {
+  margin-right: 109px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 65px;
+  }
+}
+
+.nav {
+  flex-grow: 1;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.list {
+  @include list-style-none;
+  display: flex;
+  align-items: flex-start;
+}
+
+.item {
+  margin-top: 10px;
+
+  &:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-top: 3px;
+
+    &:not(:last-child) {
+      margin-right: 21px;
+    }
+  }
+}
+
+.link {
+  font-family: $regular-font;
+  font-size: 16px;
+  line-height: 19px;
+  color: $basic-black;
+
+  @media (max-width: $tablet-width) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.login {
+  display: block;
+  position: relative;
+
+  font-family: $regular-font;
+  font-size: 16px;
+  line-height: 19px;
+  color: $basic-black;
+
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-left: auto;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 22px;
+    background-image: url("../../assets/img/login.svg");
+    background-repeat: no-repeat;
+  }
+
+  @media (max-width: $tablet-width) {
+    min-height: 22px;
+
+    padding-left: 20px;
+    margin: 0;
+
+    & span {
+      display: none;
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-left: 14px;
+    margin-left: auto;
+
+    &::before {
+      width: 14px;
+      height: 16px;
+      background-size: contain;
+    }
+  }
+}

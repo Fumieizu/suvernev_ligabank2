@@ -72,14 +72,39 @@
   flex-grow: 1;
 
   @media (max-width: $mobile-width) {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    inset: 45px 0 0;
+    padding: 35px 15px;
+    background-color: $background-white;
+    overflow-y: auto;
   }
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 .list {
   @include list-style-none;
   display: flex;
   align-items: flex-start;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+
+    & .login {
+      padding-left: 30px;
+
+      &::before {
+        top: -5px;
+        width: 20px;
+        height: 22px;
+      }
+    }
+  }
 }
 
 .item {
@@ -96,6 +121,17 @@
       margin-right: 21px;
     }
   }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    margin: 0;
+    padding: 21px 21px 19px 15px;
+    border-bottom: 1px solid $border-color;
+
+    &:first-child {
+      border-top: 1px solid $border-color;
+    }
+  }
 }
 
 .link {
@@ -107,6 +143,11 @@
   @media (max-width: $tablet-width) {
     font-size: 14px;
     line-height: 16px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 
@@ -149,10 +190,44 @@
     padding-left: 14px;
     margin-left: auto;
 
+    font-size: 16px;
+    line-height: 19px;
+
     &::before {
       width: 14px;
       height: 16px;
       background-size: contain;
     }
+  }
+}
+
+.close_button {
+  display: block;
+  top: 6px;
+  right: 6px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background-color: $button-black;
+  }
+
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
   }
 }

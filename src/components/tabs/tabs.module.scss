@@ -1,0 +1,339 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.section {
+  margin-bottom: 96px;
+  margin-top: 61px;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 0;
+    margin-bottom: 70px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 55px;
+  }
+}
+
+.container {
+  @include container;
+  max-width: 1170px;
+}
+
+.slides {
+  height: 410px;
+
+  @media (max-width: $tablet-width) {
+    height: 380px;
+  }
+
+  @media (max-width: $mobile-width) {
+    height: 362px;
+  }
+}
+
+.slide {
+  background-color: $background-white;
+  padding-top: 51px;
+  padding-left: 70px;
+  padding-right: 50%;
+  background-repeat: no-repeat;
+  background-position: 596px 60px;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 54px;
+    padding-left: 45px;
+    padding-right: 45%;
+    background-position: 91% 60px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-left: 15px;
+    padding-right: 15px;
+    background-position: 100% 99px;
+  }
+
+  &_vault {
+    background-image: url('../../assets/img/piggybank.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../assets/img/piggybank@2x.jpg');
+      background-size: 440px 290px;
+    }
+
+    @media (max-width: $tablet-width) {
+      background-image: url('../../assets/img/piggybank-tablet.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/piggybank-tablet@2x.jpg');
+        background-size: 289px 260px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url('../../assets/img/piggybank-mobile.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/piggybank-mobile@2x.jpg');
+        background-size: 87px 113px;
+      }
+    }
+  }
+
+  &_cards {
+    background-image: url('../../assets/img/car.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../assets/img/car@2x.jpg');
+      background-size: 440px 290px;
+    }
+
+    @media (max-width: $tablet-width) {
+      background-image: url('../../assets/img/car-tablet.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/car-tablet@2x.jpg');
+        background-size: 289px 260px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url('../../assets/img/car-mobile.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/car-mobile@2x.jpg');
+        background-size: 87px 113px;
+      }
+    }
+  }
+
+  &_security {
+    background-image: url('../../assets/img/lock.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../assets/img/lock@2x.jpg');
+      background-size: 440px 290px;
+    }
+
+    @media (max-width: $tablet-width) {
+      background-image: url('../../assets/img/lock-tablet.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/lock-tablet@2x.jpg');
+        background-size: 289px 260px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url('../../assets/img/lock-mobile.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/lock-mobile@2x.jpg');
+        background-size: 87px 113px;
+      }
+    }
+  }
+
+  &_phone {
+    background-image: url('../../assets/img/phone.jpg');
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../../assets/img/phone@2x.jpg');
+      background-size: 440px 290px;
+    }
+
+    @media (max-width: $tablet-width) {
+      background-image: url('../../assets/img/phone-tablet.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/phone-tablet@2x.jpg');
+        background-size: 289px 260px;
+      }
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url('../../assets/img/phone-mobile.jpg');
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../../assets/img/phone-mobile@2x.jpg');
+        background-size: 87px 113px;
+      }
+    }
+  }
+}
+
+.title {
+  font-family: $medium-font;
+  font-size: 22px;
+  line-height: 31px;
+  margin: 0 0 30px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 22px;
+  }
+}
+
+.list {
+  @include list-style-none;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 35px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 25px;
+    padding-right: 50px;
+  }
+}
+
+.item {
+  position: relative;
+  padding-left: 21px;
+
+  &:not(:last-child) {
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-left: 15px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    & br {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 13px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/img/bullet.svg');
+
+    @media (max-width: $mobile-width) {
+      width: 9px;
+      height: 11px;
+      background-size: contain;
+    }
+  }
+}
+
+.button {
+  @include button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+  line-height: 19px;
+  color: $background-white;
+
+  background-color: $basic-blue;
+  width: 198px;
+  height: 51px;
+
+  @media (max-width: $tablet-width) {
+    height: 49px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 100%;
+    height: 43px;
+
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.control {
+  position: relative;
+  padding-left: 45px;
+
+  font-family: $medium-font;
+  font-size: 18px;
+  line-height: 21px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &_vault::before {
+    background-image: url('../../assets/img/vault.svg');
+  }
+
+  &_cards::before {
+    background-image: url('../../assets/img/cards.svg');
+  }
+
+  &_security::before {
+    background-image: url('../../assets/img/security.svg');
+  }
+
+  &_phone::before {
+    background-image: url('../../assets/img/phone.svg');
+  }
+}
+
+:global(.thumb .swiper-slide) {
+  position: relative;
+  padding: 37px 10px 35px;
+  text-align: center;
+  border-radius: 4px 4px 0 0;
+  transition: 0.25s linear;
+  font-size: 18px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $background-white;
+    color: $basic-black;
+  }
+}
+
+:global(.thumb) {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+:global(.slides .swiper-pagination) {
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+:global(.slides .swiper-pagination-bullet-active) {
+  background-color: $slider-white;
+}
+
+:global(.thumb .swiper-slide-thumb-active) {
+  color: $basic-black;
+  background-color: $background-white;
+}

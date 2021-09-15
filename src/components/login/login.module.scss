@@ -13,6 +13,18 @@
   background-color: $background-white;
   border: 4px solid $basic-blue;
   padding: 55px 56px 60px;
+
+  @media (max-width: $tablet-width) {
+    width: 678px;
+    padding-left: 84px;
+    padding-right: 84px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 290px;
+    padding: 45px 16px 20px;
+    height: 455px;
+  }
 }
 
 .wrapper {
@@ -61,7 +73,14 @@
   margin-bottom: 25px;
   color: $basic-gray;
   font-size: 12px;
-  line-height: 17px
+  line-height: 17px;
+
+  @media (max-width: $mobile-width) {
+    order: 1;
+    align-self: center;
+    font-size: 14px;
+    margin: 15px 0 0;
+  }
 }
 
 .button {
@@ -74,6 +93,10 @@
   line-height: 21px;
   color: $background-white;
   font-family: $medium-font;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 24px;
+  }
 }
 
 .show_password {

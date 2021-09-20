@@ -18,7 +18,7 @@ export default function Slider() {
         pagination={{clickable: true}}
         a11y
         loop
-        /*autoplay={{ delay: 4000, disableOnInteraction: false }}*/
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
       >
         <SwiperSlide className={`${styles.slide} ${styles.slide_first}`}>
           <div className={`${styles.wrapper} ${styles.wrapper_first}`}>

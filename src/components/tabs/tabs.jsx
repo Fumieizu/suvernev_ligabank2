@@ -106,7 +106,7 @@ export default function Tabs() {
                  или вывод процентов на банковскую карту
                 </li>
               </ul>
-              <a className={styles.button}>Узнать подробнее</a>
+              <a href="/" className={styles.button}>Узнать подробнее</a>
             </SwiperSlide>
             <SwiperSlide
               className={`${styles.slide} ${styles.slide_cards}`}
@@ -146,7 +146,7 @@ export default function Tabs() {
                 <li className={styles.item}>Страхование жизни и здоровья</li>
                 <li className={styles.item}>Страхование недвижимости</li>
               </ul>
-              <a className={styles.button}>Узнать подробнее</a>
+              <a href="/" className={styles.button}>Узнать подробнее</a>
             </SwiperSlide>
             <SwiperSlide
               className={`${styles.slide} ${styles.slide_phone}`}
@@ -167,7 +167,7 @@ export default function Tabs() {
                   всему миру
                 </li>
               </ul>
-              <a className={styles.button}>Узнать подробнее</a>
+              <a href="/" className={styles.button}>Узнать подробнее</a>
             </SwiperSlide>
           </Swiper>
         </div>

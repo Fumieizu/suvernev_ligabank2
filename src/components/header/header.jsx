@@ -36,17 +36,17 @@ export default function Header() {
               </Link>
             </li>
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to="/credit" className={styles.link}>
                 Рассчитать кредит
               </Link>
             </li>
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to="/converter" className={styles.link}>
                 Конвертер валют
               </Link>
             </li>
             <li className={styles.item}>
-              <Link to="/" className={styles.link}>
+              <Link to="/contact" className={styles.link}>
                 Контакты
               </Link>
             </li>

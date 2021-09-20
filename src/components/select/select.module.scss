@@ -1,0 +1,76 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  @include button;
+  position: relative;
+  font-size: 16px;
+  line-height: 22px;
+  height: 60px;
+  border: 1px solid $basic-black;
+  background-color: transparent;
+  text-align: left;
+  padding-left: 25px;
+
+  @media (max-width: $mobile-width) {
+    padding-left: 15px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../../assets/img/select.svg');
+
+    @media screen and (max-width: 767px) {
+      right: 12px;
+    }
+  }
+
+  &_active {
+    border-radius: 4px 4px 0 0;
+
+    &::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+}
+
+.list {
+  @include list-style-none;
+  border: 1px solid $basic-black;
+  border-radius: 0 0 4px 4px;
+  overflow: hidden;
+  border-top: none;
+}
+
+.item {
+  &:not(:last-child) {
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.input:focus + .label {
+  background-color: $background-white;
+}
+
+.label {
+  display: block;
+  padding: 25px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $background-white;
+  }
+}

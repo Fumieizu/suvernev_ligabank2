@@ -1,0 +1,26 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.wrapper {
+  height: 225px;
+  padding: 60px;
+  background-color: $background-white;
+
+  @media (max-width: $mobile-width) {
+    height: 100%;
+  }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 15px;
+  line-height: 30px;
+}
+
+.text {
+  margin: 0;
+  font-size: 16px;
+  color: $message-black;
+  line-height: 22px;
+}

@@ -1,0 +1,31 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.wrapper {
+  padding-bottom: 5px;
+}
+
+.input {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  margin: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.text {
+  padding-left: 5px;
+  line-height: 16px;
+  vertical-align: text-bottom;
+
+  @media (max-width: $mobile-width) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

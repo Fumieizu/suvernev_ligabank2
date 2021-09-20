@@ -1,0 +1,70 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 100%;
+  padding: 53px 67px 55px;
+  background-color: $background-white;
+
+  @media (max-width: $mobile-width) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.text {
+  margin: 0;
+  color: $message-black;
+  line-height: 22px;
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
+
+  @media (max-width: $mobile-width) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.close_button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: $button-black;
+  }
+
+  &::before {
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateX(-50%) rotate(-45deg);
+  }
+}

@@ -1,0 +1,57 @@
+@import "src/styles/_variables.scss";
+@import "src/styles/mixins.scss";
+
+.list {
+  @include list-style-none;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 16px;
+  position: relative;
+
+  @media (max-width: $tablet-width) {
+    left: -24px;
+    top: 9px;
+  }
+
+  @media (max-width: $mobile-width) {
+    left: 0;
+    top: 0;
+  }
+}
+
+.item:not(:last-child) {
+  margin-right: 15px;
+
+  @media (max-width: $tablet-width) {
+    margin-right: 20px;
+  }
+}
+
+.link {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 16px;
+  height: 16px;
+
+  &:hover {
+    opacity: .6;
+  }
+}
+
+.facebook {
+  width: 9px;
+  background-image: url('../../assets/img/facebook.svg');
+}
+
+.instagram {
+  background-image: url('../../assets/img/instagram.svg');
+}
+
+.twitter {
+  background-image: url('../../assets/img/twitter.svg');
+}
+
+.youtube {
+  background-image: url('../../assets/img/youtube.svg');
+}

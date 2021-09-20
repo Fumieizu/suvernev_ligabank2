@@ -26,7 +26,7 @@ export default function Header() {
         <picture>
           <source srcSet={logoPhone} media={`(max-width: ${BreakPoint.MAX_PHONE}px)`} type="image/svg+xml"/>
           <source srcSet={logoTablet} media={`(max-width: ${BreakPoint.MAX_TABLET}px)`} type="image/svg+xml"/>
-          <img className={styles.logo} src={logoDesktop} alt="Логотип Лига Банка"/>
+          <img className={styles.logo} width="150" height="27" src={logoDesktop} alt="Логотип Лига Банка"/>
         </picture>
         <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
           <ul className={styles.list}>

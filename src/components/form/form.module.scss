@@ -1,0 +1,155 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  column-gap: 6%;
+
+  @media (max-width: $tablet-width) {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+  }
+}
+
+.container {
+  @media (max-width: $tablet-width) {
+    margin-bottom: 36px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 26px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.select {
+  margin-bottom: 32px;
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 26px;
+  }
+}
+
+.title {
+  font-family: $medium-font;
+  font-size: 22px;
+  line-height: 31px;
+  margin: 0 0 21px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  position: relative;
+}
+
+.caption {
+  margin-top: -5px;
+  margin-bottom: 12px;
+}
+
+.error {
+  position: absolute;
+  color: $basic-red;
+  right: 0;
+  top: -5px;
+}
+
+.input {
+  font-family: $medium-font;
+  font-size: 18px;
+  line-height: 25px;
+  height: 60px;
+  border: 1px solid $basic-black;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  text-align: center;
+
+  @media (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 7px;
+  }
+
+  &_error {
+    border: 1px solid $basic-red;
+  }
+}
+
+.button {
+  @include button;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
+  top: 42px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &_minus {
+    background-image: url('../../assets/img/minus.svg');
+    left: 17px;
+  }
+
+  &_plus {
+    background-image: url('../../assets/img/plus.svg');
+    right: 17px;
+  }
+}
+
+.text {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 24px;
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 14px;
+  }
+}
+
+.slider {
+  margin-bottom: 21px;
+
+
+  @media (max-width: $tablet-width) {
+    margin-bottom: 17px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-bottom: 15px;
+  }
+}
+
+:global(.rc-slider-dot) {
+  display: none;
+}
+
+:global(.rc-slider-mark-text) {
+  font-size: 14px;
+  line-height: 20px;
+}

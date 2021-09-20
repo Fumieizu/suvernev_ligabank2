@@ -61,15 +61,26 @@
 }
 
 .logo {
-  margin-right: 109px;
+  margin-right: 15px;
 
   @media (max-width: $tablet-width) {
-    margin-right: 65px;
+    width: 134px;
+    height: 24px;
+  }
+
+  @media (max-width: $mobile-width) {
+    width: 116px;
+    height: 19px;
   }
 }
 
 .nav {
   flex-grow: 1;
+  padding: 0 0 0 7.9%;
+
+  @media (max-width: $tablet-width) {
+    padding-left: 7.5%;
+  }
 
   @media (max-width: $mobile-width) {
     opacity: 0;
@@ -85,6 +96,7 @@
 .active {
   opacity: 1;
   visibility: visible;
+  z-index: 10000;
 }
 
 .list {

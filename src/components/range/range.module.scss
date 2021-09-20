@@ -1,0 +1,64 @@
+@import "src/styles/variables.scss";
+@import "src/styles/mixins.scss";
+
+.input {
+  display: block;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    height: 1px;
+    background-color: $border-color;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -6.5px;
+    background-color: $basic-blue;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    &:active {
+      background-color: $slider-blue;
+    }
+  }
+
+  &::-moz-range-track {
+    height: 1px;
+    background-color: $border-color;
+  }
+
+  &::-moz-range-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin-top: -6px;
+    background-color: $basic-blue;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    &:active {
+      background-color: $slider-blue;
+    }
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}

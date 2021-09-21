@@ -30,6 +30,7 @@ export default function Form({onDataSet }) {
   const [casco, setCasco] = useState(false);
   const [insurance, setInsurance] = useState(false);
 
+
   useEffect(() => {
     if (purpose !== PurposeNames.DEFAULT) {
       setPrice(getMoneyString(LoanPurpose[purpose].MIN_PRICE));
@@ -68,11 +69,11 @@ export default function Form({onDataSet }) {
 
   const getProposalPercent = () => {
     if (purpose === PurposeNames.MORTGAGE) {
-      if (paymentRange >= PAYMENT_PERCENT) {
-        return CreditPercents[purpose].MIN;
-      }
-
-      return CreditPercents[purpose].MAX;
+      return (
+        paymentRange >= PAYMENT_PERCENT
+          ? CreditPercents[purpose].MIN
+          : CreditPercents[purpose].MAX
+      );
     }
 
     if (purpose === PurposeNames.CAR) {
@@ -184,16 +185,14 @@ export default function Form({onDataSet }) {
       step = step * -1;
     }
 
-    setPrice((state) => {
-      setPayment(
-        getMoneyString(
-          Math.round(((getNumber(state) + step) / MAX_PERCENT) * +paymentRange),
-        ),
-      );
+    setPrice(getMoneyString(getNumber(price) + step));
 
-      return getMoneyString(getNumber(state) + step);
-    });
+    setPayment(
+      getMoneyString(Math.round(((getNumber(price) + step) / MAX_PERCENT) * +paymentRange),
+      ),
+    );
   };
+
 
   const onPaymentChange = (evt) => {
     const value = getNumber(evt.target.value);
@@ -214,6 +213,7 @@ export default function Form({onDataSet }) {
           (numberPrice / MAX_PERCENT) * LoanPurpose[purpose].MIN_PERCENT,
         ),
       );
+      setPaymentRange(LoanPurpose[purpose].MIN_PERCENT);
       return;
     }
 

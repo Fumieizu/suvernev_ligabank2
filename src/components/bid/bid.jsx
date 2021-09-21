@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './bid.module.scss';
 import InputMask from 'react-input-mask';
@@ -26,12 +26,6 @@ export default function Bid({purpose, price, payment, time, onDataSet}) {
   const [email, setEmail] = useLocalStorage(FieldName.email, '');
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const nameRef = useRef(null);
-
-  useEffect(() => {
-    nameRef.current.focus();
-  }, []);
 
   const onFormSubmit = (evt) => {
     evt.preventDefault();
@@ -64,7 +58,7 @@ export default function Bid({purpose, price, payment, time, onDataSet}) {
               onChange={(evt) => setName(evt.target.value)}
               placeholder="ФИО"
               aria-label="ФИО"
-              ref={nameRef}
+              autoFocus
               required
             />
           </label>

@@ -33,6 +33,7 @@ export const LoanPurpose = {
     MAX_TIME: 30,
     STEP_TIME: 1,
     MIN_PERCENT: 10,
+    PAYMENT: 120000,
   },
   CAR: {
     NAME: 'автомобиля',
@@ -43,6 +44,7 @@ export const LoanPurpose = {
     MAX_TIME: 5,
     STEP_TIME: 1,
     MIN_PERCENT: 20,
+    PAYMENT: 200000,
   },
 };
 

@@ -45,7 +45,7 @@ export default function Footer() {
             <p className={styles.text}>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
           </li>
           <li className={`${styles.contacts} ${styles.phone}`}>
-            <p className={styles.title}>8 800 111 22 33</p>
+            <a className={styles.title} href='tel:88001112233'>8 800 111 22 33</a>
             <p className={styles.text}>Бесплатный для всех городов России</p>
           </li>
           <li>

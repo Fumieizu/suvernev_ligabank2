@@ -10,9 +10,9 @@ export default function Calculator() {
     payment: '',
     time: '',
   });
-
+  const def = '';
   return (
-    <section className={styles.section} id="calculator">
+    <section className={`${styles.section} ${data.purpose === def ? styles.purpose_margin : ''}`} id="calculator">
       <div className={styles.container}>
         <h2 className={styles.title}>Кредитный калькулятор</h2>
         <Form onDataSet ={setData}/>

@@ -8,8 +8,8 @@ export default function Range({
   max = 100,
   step = 5,
   onChange,
-  markFrom = '',
   markTo = '',
+  prefix = '',
 }) {
   return (
     <div className={styles.wrapper}>
@@ -23,7 +23,7 @@ export default function Range({
         onChange={onChange}
       />
       <div className={styles.inner}>
-        <span>{markFrom}</span>
+        <span>{`${value} ${prefix}`}</span>
         <span>{markTo}</span>
       </div>
     </div>
@@ -36,6 +36,6 @@ Range.propTypes = {
   max: PropTypes.number,
   step: PropTypes.number,
   onChange: PropTypes.func.isRequired,
-  markFrom: PropTypes.string,
   markTo: PropTypes.string,
+  prefix: PropTypes.string,
 };

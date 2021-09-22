@@ -93,6 +93,7 @@
 .nav {
   @include list-style-none;
   display: flex;
+  flex-direction: column;
   max-width: 144px;
   flex-wrap: wrap;
   padding-top: 7px;
@@ -135,6 +136,7 @@
   font-size: 16px;
   line-height: 22px;
   margin: 16px 0 0;
+  color: $basic-black;
 
   @media (max-width: $tablet-width) {
     margin-top: 8px;

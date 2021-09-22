@@ -17,23 +17,26 @@ export default function Slider() {
         slidesPerView={1}
         pagination={{clickable: true}}
         a11y
-        loop
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
       >
-        <SwiperSlide className={`${styles.slide} ${styles.slide_first}`}>
+        <SwiperSlide className={`${styles.slide} ${styles.slide_first}`} tabIndex='0'>
           <div className={`${styles.wrapper} ${styles.wrapper_first}`}>
             <h3 className={styles.title}>Лига Банк</h3>
             <p className={styles.text}>Кредиты на любой случай</p>
             <a href="#calculator" className={styles.button}>Рассчитать кредит</a>
           </div>
         </SwiperSlide>
-        <SwiperSlide className={`${styles.slide} ${styles.slide_second}`}>
+        <SwiperSlide className={`${styles.slide} ${styles.slide_second}`} tabIndex='0'>
           <div className={styles.wrapper}>
             <h3 className={styles.title}>Лига Банк</h3>
             <p className={styles.text}>Ваша уверенность в завтрашнем дне</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide className={`${styles.slide} ${styles.slide_third}`}>
+        <SwiperSlide className={`${styles.slide} ${styles.slide_third}`} tabIndex='0'>
           <div className={styles.wrapper}>
             <h3 className={styles.title}>Лига Банк</h3>
             <p className={styles.text}>Всегда рядом</p>

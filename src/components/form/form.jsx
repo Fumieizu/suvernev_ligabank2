@@ -71,26 +71,26 @@ export default function Form({onDataSet }) {
     if (purpose === PurposeNames.MORTGAGE) {
       return (
         paymentRange >= PAYMENT_PERCENT
-          ? CreditPercents[purpose].MIN
-          : CreditPercents[purpose].MAX
+          ? CreditPercents[purpose].MIN.toFixed(2)
+          : CreditPercents[purpose].MAX.toFixed(2)
       );
     }
 
     if (purpose === PurposeNames.CAR) {
       if (casco && insurance) {
-        return CreditPercents[purpose].INSURANCE.MIN;
+        return CreditPercents[purpose].INSURANCE.MIN.toFixed(2);
       }
 
       if (casco || insurance) {
-        return CreditPercents[purpose].INSURANCE.MAX;
+        return CreditPercents[purpose].INSURANCE.MAX.toFixed(2);
       }
 
       if (getNumber(price) < CAR_PRICE) {
-        return CreditPercents[purpose].PRICE.MAX;
+        return CreditPercents[purpose].PRICE.MAX.toFixed(2);
       }
 
       if (getNumber(price) >= CAR_PRICE) {
-        return CreditPercents[purpose].PRICE.MIN;
+        return CreditPercents[purpose].PRICE.MIN.toFixed(2);
       }
     }
   };
@@ -280,7 +280,7 @@ export default function Form({onDataSet }) {
   return (
     <form className={styles.form} onSubmit={onFormSubmit}>
       <div className={styles.container}>
-        <div className={`${styles.wrapper} ${styles.select}`}>
+        <div className={`${styles.wrapper} ${purpose !== PurposeNames.DEFAULT ? styles.select : ''}`}>
           <h3 className={styles.title}>Шаг 1. Цель кредита</h3>
           <Select activeType={purpose} onActiveType={setPurpose}/>
         </div>
@@ -339,8 +339,8 @@ export default function Form({onDataSet }) {
                 <Range
                   onChange={onPaymentRangeChange}
                   value={paymentRange}
+                  prefix={'%'}
                   min={LoanPurpose[purpose].MIN_PERCENT}
-                  markFrom={`${LoanPurpose[purpose].MIN_PERCENT}%`}
                 />
               </div>
             </label>
@@ -362,7 +362,6 @@ export default function Form({onDataSet }) {
                 min={LoanPurpose[purpose].MIN_TIME}
                 max={LoanPurpose[purpose].MAX_TIME}
                 step={LoanPurpose[purpose].STEP_TIME}
-                markFrom={getTime(LoanPurpose[purpose].MIN_TIME)}
                 markTo={getTime(LoanPurpose[purpose].MAX_TIME)}
               />
             </div>

@@ -11,7 +11,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    margin-bottom: 55px;
+    margin-bottom: 41px;
   }
 }
 
@@ -21,35 +21,30 @@
 }
 
 .slides {
-  height: 410px;
-
-  @media (max-width: $tablet-width) {
-    height: 380px;
-  }
-
   @media (max-width: $mobile-width) {
-    height: 362px;
+    min-height: 362px;
+
+    :global(.swiper-pagination-bullets) {
+      bottom: 18px
+    }
   }
 }
 
 .slide {
   background-color: $background-white;
-  padding-top: 51px;
-  padding-left: 70px;
-  padding-right: 50%;
+  padding: 51px 50% 61px 70px;
   background-repeat: no-repeat;
   background-position: 596px 60px;
 
   @media (max-width: $tablet-width) {
-    padding-top: 54px;
-    padding-left: 45px;
-    padding-right: 45%;
+    padding: 54px 45% 57px 45px;
     background-position: 91% 60px;
   }
 
   @media (max-width: $mobile-width) {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 60px;
     background-position: 100% 99px;
   }
 
@@ -196,8 +191,13 @@
   @media (max-width: $mobile-width) {
     font-size: 14px;
     line-height: 18px;
+    margin-bottom: 60px;
+    padding-right: 73px;
+  }
+
+  @media (max-width: $semi-mobile) {
     margin-bottom: 25px;
-    padding-right: 50px;
+    padding-right: 63px;
   }
 }
 
@@ -284,42 +284,25 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-}
 
-.vault::before {
-  background-image: url('../../assets/img/vault.svg');
-}
+  &_vault::before {
+    background-image: url('../../assets/img/vault.svg');
+  }
 
-.cards::before {
-  background-image: url('../../assets/img/cards.svg');
-}
+  &_cards::before {
+    background-image: url('../../assets/img/cards.svg');
+  }
 
-.security::before {
-  background-image: url('../../assets/img/security.svg');
-}
+  &_security::before {
+    background-image: url('../../assets/img/security.svg');
+  }
 
-.phone::before {
-  background-image: url('../../assets/img/phone.svg');
-}
-
-.control_container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding-left: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  -webkit-box-align: center;
-  align-items: center;
-  list-style: none;
-
-  @media (max-width: $tablet-width) {
-    display: none;
+  &_phone::before {
+    background-image: url('../../assets/img/phone.svg');
   }
 }
 
-.control_button {
-  border: none;
-  background-color: transparent;
+:global(.thumb .swiper-slide) {
   position: relative;
   padding: 37px 10px 35px;
   text-align: center;
@@ -332,10 +315,33 @@
     background-color: $background-white;
     color: $basic-black;
   }
+}
 
-  &_active {
-    color: $basic-black;
-    background-color: $background-white;
+:global(.thumb) {
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.calc_link {
+  font-family: $medium-font;
+  text-decoration: underline;
+  color: $secondary-black;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 0;
+
+  @media (max-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  @media (max-width: $mobile-width) {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
@@ -347,4 +353,9 @@
 
 :global(.slides .swiper-pagination-bullet-active) {
   background-color: $slider-white;
+}
+
+:global(.thumb .swiper-slide-thumb-active) {
+  color: $basic-black;
+  background-color: $background-white;
 }

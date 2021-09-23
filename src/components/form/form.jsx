@@ -340,6 +340,7 @@ export default function Form({onDataSet }) {
                   onChange={onPaymentRangeChange}
                   value={paymentRange}
                   prefix={'%'}
+                  markFrom={paymentRange}
                   min={LoanPurpose[purpose].MIN_PERCENT}
                 />
               </div>
@@ -363,7 +364,7 @@ export default function Form({onDataSet }) {
                 max={LoanPurpose[purpose].MAX_TIME}
                 step={LoanPurpose[purpose].STEP_TIME}
                 markTo={getTime(LoanPurpose[purpose].MAX_TIME)}
-                prefix={`${declOfNum(timeRange, TIME_TITLES)}`}
+                markFrom={getTime(LoanPurpose[purpose].MIN_TIME)}
               />
             </div>
             {purpose === PurposeNames.MORTGAGE && (

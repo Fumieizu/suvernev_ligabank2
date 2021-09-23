@@ -9,6 +9,7 @@ export default function Range({
   step = 5,
   onChange,
   markTo = '',
+  markFrom = '',
   prefix = '',
 }) {
   return (
@@ -23,7 +24,7 @@ export default function Range({
         onChange={onChange}
       />
       <div className={styles.inner}>
-        <span>{`${value} ${prefix}`}</span>
+        <span>{`${markFrom} ${prefix}`}</span>
         <span>{markTo}</span>
       </div>
     </div>
@@ -36,6 +37,7 @@ Range.propTypes = {
   max: PropTypes.number,
   step: PropTypes.number,
   onChange: PropTypes.func.isRequired,
+  markFrom: PropTypes.string,
   markTo: PropTypes.string,
   prefix: PropTypes.string,
 };

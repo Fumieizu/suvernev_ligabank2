@@ -10,7 +10,7 @@ export default function SocialList() {
         Object.values(Social).map((name) => (
           <li key={name} className={styles.item}>
             <Link
-              href="/"
+              to="/"
               aria-label={name}
               className={`${styles.link} ${styles[name]}`}
             />

@@ -363,7 +363,7 @@ export default function Form({onDataSet }) {
                 max={LoanPurpose[purpose].MAX_TIME}
                 step={LoanPurpose[purpose].STEP_TIME}
                 markTo={getTime(LoanPurpose[purpose].MAX_TIME)}
-                prefix={`${timeRange < 5 ? 'год' : 'лет'}`}
+                prefix={`${declOfNum(timeRange, TIME_TITLES)}`}
               />
             </div>
             {purpose === PurposeNames.MORTGAGE && (

@@ -284,25 +284,42 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+}
 
-  &_vault::before {
-    background-image: url('../../assets/img/vault.svg');
-  }
+.vault::before {
+  background-image: url('../../assets/img/vault.svg');
+}
 
-  &_cards::before {
-    background-image: url('../../assets/img/cards.svg');
-  }
+.cards::before {
+  background-image: url('../../assets/img/cards.svg');
+}
 
-  &_security::before {
-    background-image: url('../../assets/img/security.svg');
-  }
+.security::before {
+  background-image: url('../../assets/img/security.svg');
+}
 
-  &_phone::before {
-    background-image: url('../../assets/img/phone.svg');
+.phone::before {
+  background-image: url('../../assets/img/phone.svg');
+}
+
+.control_container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -webkit-box-align: center;
+  align-items: center;
+  list-style: none;
+
+  @media (max-width: $tablet-width) {
+    display: none;
   }
 }
 
-:global(.thumb .swiper-slide) {
+.control_button {
+  border: none;
+  background-color: transparent;
   position: relative;
   padding: 37px 10px 35px;
   text-align: center;
@@ -315,11 +332,10 @@
     background-color: $background-white;
     color: $basic-black;
   }
-}
 
-:global(.thumb) {
-  @media (max-width: $tablet-width) {
-    display: none;
+  &_active {
+    color: $basic-black;
+    background-color: $background-white;
   }
 }
 
@@ -355,7 +371,3 @@
   background-color: $slider-white;
 }
 
-:global(.thumb .swiper-slide-thumb-active) {
-  color: $basic-black;
-  background-color: $background-white;
-}

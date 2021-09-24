@@ -23,24 +23,24 @@ export default function Slider() {
           pauseOnMouseEnter: true,
         }}
       >
-        <SwiperSlide className={`${styles.slide} ${styles.slide_first}`} tabIndex='0'>
+        <SwiperSlide className={`${styles.slide} ${styles.slide_first}`} tabIndex="-1">
           <div className={`${styles.wrapper} ${styles.wrapper_first}`}>
             <h3 className={styles.title}>Лига Банк</h3>
             <p className={styles.text}>Кредиты на любой случай</p>
-            <a href="#calculator" className={styles.button}>Рассчитать кредит</a>
+            <a href="#calculator" className={styles.button} tabIndex="-1">Рассчитать кредит</a>
           </div>
         </SwiperSlide>
-        <SwiperSlide className={`${styles.slide} ${styles.slide_second}`} tabIndex='0'>
+        <SwiperSlide className={`${styles.slide} ${styles.slide_second}`} tabIndex="-1">
           <div className={styles.wrapper}>
             <h3 className={styles.title}>Лига Банк</h3>
             <p className={styles.text}>Ваша уверенность в завтрашнем дне</p>
           </div>
         </SwiperSlide>
-        <SwiperSlide className={`${styles.slide} ${styles.slide_third}`} tabIndex='0'>
+        <SwiperSlide className={`${styles.slide} ${styles.slide_third}`} tabIndex="-1">
           <div className={styles.wrapper}>
             <h3 className={styles.title}>Лига Банк</h3>
             <p className={styles.text}>Всегда рядом</p>
-            <a href="#map" className={`${styles.button} ${styles.button_third}`}>Найти отделение</a>
+            <a href="#map" className={`${styles.button} ${styles.button_third}`} tabIndex="-1">Найти отделение</a>
           </div>
         </SwiperSlide>
       </Swiper>
